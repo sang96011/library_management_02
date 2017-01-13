@@ -1,15 +1,26 @@
 en:
   site:
     name: Library
+    sologan: Sologan
   error:
     desc: The form contains
   navbar:
-    login: Login
+    login: Log in
     logout: Logout
     signup: Sign up
+    setting: Setting
+    profile: Profile
+    account: Account
   users:
     not_found: User not found!
     register:
+      new: New users?
       form:
         create: Create my account
       success: Account has been created! Login now
+  sessions:
+    login:
+      remember: Remember me on this computer
+      signup_now: Sign up now!
+    success: Welcome back
+    error: Invalid email/password combination
