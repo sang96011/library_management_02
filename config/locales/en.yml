@@ -24,3 +24,9 @@ en:
       signup_now: Sign up now!
     success: Welcome back
     error: Invalid email/password combination
+  help:
+    title: Help page
+  contact:
+    title: Contact page
+  search:
+    title: Search our website
