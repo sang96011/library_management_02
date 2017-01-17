@@ -1,0 +1,23 @@
+<footer class="footer-distributed">
+
+  <div class="footer-left">
+
+    <p class="footer-links">
+      <%= link_to t("site.name"), root_url %>
+      ·
+      <%= link_to t("contact.title"), "/pages/contact" %>
+      ·
+      <%= link_to t("help.title"), "/pages/help" %>
+    </p>
+    <p class="footer-company-name">
+      <%= t "site.name" %> &copy; <%= Date.today.year %>
+    </p>
+  </div>
+
+  <div class="footer-right">
+    <form method="get" action="#">
+      <input placeholder="<%= t "search.title" %>" name="search"/>
+      <i class="fa fa-search"></i>
+    </form>
+  </div>
+</footer>
