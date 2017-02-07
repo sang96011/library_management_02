@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20170112063733) do
     t.date     "publish_date"
     t.integer  "quantity"
     t.integer  "pages"
+    t.integer  "publisher_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

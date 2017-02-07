@@ -11,7 +11,7 @@ class CreateBooks < ActiveRecord::Migration[5.0]
       t.date :publish_date
       t.integer :quantity
       t.integer :pages
-
+      t.integer :publisher_id
       t.timestamps
     end
   end

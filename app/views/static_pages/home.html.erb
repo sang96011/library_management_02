@@ -1,0 +1,35 @@
+<h1 class="main-title"><span><%= t "home.catelog" %></span></h1>
+<div class="row">
+  <div class="col-sm-3">
+    <div class="list-group">
+      <% @categories.each do |category| %>
+        <li class="list-group-item">
+          <%= link_to category.name, "#" %>
+        </li>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-sm-9 list-items">
+    <% @books.each do |book| %>
+      <div class="col-sm-4 item">
+        <a href="#">
+          <div class="item-image">
+            <%= image_tag "http://allstore-html.real-web.pro/img/catalog-gallery/2/1.jpg" %>
+            <div class="item-action">
+              <div class="item-box">
+                <p class="item-option text-center">
+                </p>
+                <button class="btn"><%= t "item.add_to_cart" %></button>
+              </div>
+            </div>
+          </div>
+        </a>
+        <i class="item-info">i</i>
+        <h4 class="text-center"><%= link_to book.title, "#", title: book.title %></h4>
+        <h4 class="text-center"><%= book.price %> <%= t "item.currency" %></h4>
+      </div>
+    <% end %>
+    <hr/>
+    <%= will_paginate @books %>
+  </div>
+</div>

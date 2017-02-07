@@ -30,3 +30,8 @@ en:
     title: Contact page
   search:
     title: Search our website
+  home:
+    catelog: All Catalog
+  item:
+    currency: $
+    add_to_cart: Add to cart
