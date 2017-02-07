@@ -1,0 +1,59 @@
+<% provide :title, t("books.show.title") + @book.title %>
+<div class="row book-detail">
+  <div class="col-sm-12">
+    <div class="col-sm-5 img">
+      <%= image_tag @book.image, class: "img-book img-responsive" %>
+    </div>
+    <div class="col-sm-7">
+      <h2><%= @book.title %></h2>
+      <hr>
+      <div class="row">
+        <div class="col-sm-3"><%= t "books.show.price" %></div>
+        <div class="col-sm-9"><%= @book.price %></div>
+        <div class="col-sm-3"><%= t "books.author" %></div>
+        <div class="col-sm-9">
+          <% @book.authors.each do |author| %>
+            <%= link_to author.name, "#" %>,
+          <% end %>
+        </div>
+        <div class="col-sm-3"><%= t "books.publish_date" %></div>
+        <div class="col-sm-9"><%= l Time.at(@book.publish_date), format: :default %></div>
+        <div class="col-sm-3"><%= t "books.show.quantity" %></div>
+        <div class="col-sm-9"><%= @book.quantity %></div>
+        <div class="col-sm-3"><%= t "books.show.pages" %></div>
+        <div class="col-sm-9"><%= @book.pages %></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12">
+    <div class="col-sm-5">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+          <%= link_to t("books.show.description"),
+            "#description",
+            "aria-controls": "description",
+            "role": "tab",
+            "data-toggle": "tab" %>
+        </li>
+        <li role="presentation">
+          <%= link_to t("books.show.comments"),
+            "#comments",
+            "aria-controls": "comments",
+            "role": "tab",
+            "data-toggle": "tab" %>
+        </li>
+      </ul>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="description">
+          <%= @book.description %>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="comments"></div>
+      </div>
+    </div>
+    <div class="col-sm-7">
+      <h3><%= t "books.show.recommend_books" %></h3>
+    </div>
+  </div>
+</div>

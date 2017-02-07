@@ -12,7 +12,7 @@
   <div class="col-sm-9 list-items">
     <% @books.each do |book| %>
       <div class="col-sm-4 item">
-        <a href="#">
+        <%= link_to book do %>
           <div class="item-image">
             <%= image_tag "http://allstore-html.real-web.pro/img/catalog-gallery/2/1.jpg" %>
             <div class="item-action">
@@ -23,7 +23,7 @@
               </div>
             </div>
           </div>
-        </a>
+        <% end %>
         <i class="item-info">i</i>
         <h4 class="text-center"><%= link_to book.title, "#", title: book.title %></h4>
         <h4 class="text-center"><%= book.price %> <%= t "item.currency" %></h4>
