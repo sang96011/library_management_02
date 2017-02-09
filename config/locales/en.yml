@@ -1,4 +1,17 @@
 en:
+  datetime: &datetime
+    formats:
+      default: "%d/%m/%Y"
+      short: "%m - %Y"
+      day_month: "%d/%m"
+      long: "%H:%M:%S, %d/%m/%Y"
+
+  date:
+    <<: *datetime
+
+  time:
+    <<: *datetime
+
   site:
     name: Book Library
     sologan: Sologan

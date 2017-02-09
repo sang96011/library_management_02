@@ -1,6 +1,26 @@
 en:
+  datetime: &datetime
+    formats:
+      default: "%d/%m/%Y"
+      short: "%m - %Y"
+      day_month: "%d/%m"
+      long: "%H:%M:%S, %d/%m/%Y"
+
+  date:
+    <<: *datetime
+
+  time:
+    <<: *datetime
+
   admin:
-    user: Users
+    users: Users
+    user:
+      all: All Users
+      name: Name
+      email: Email
+      permission: Permission
+      created_at: Create at
+      updated_at: Update at
     category: Categories
     book: Books
     author: Authors

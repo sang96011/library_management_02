@@ -1,0 +1,23 @@
+<h1><%= t "admin.user.all" %></h1>
+<table class="table table-bordered table table-striped">
+  <thead>
+    <tr>
+      <th class="col-md-2"><%= t "admin.user.name" %></th>
+      <th class="col-md-2"><%= t "admin.user.email" %></th>
+      <th class="col-md-1"><%= t "admin.user.permission" %></th>
+      <th class="col-md-1"><%= t "admin.user.created_at" %></th>
+      <th class="col-md-1"><%= t "admin.user.updated_at" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td class="col-md-2"><%= user.name %></td>
+        <td class="col-md-2"><%= user.email %></td>
+        <td class="col-md-1"><%= user.permission %></td>
+        <td class="col-md-1"><%= l user.created_at, format: :default %></td>
+        <td class="col-md-1"><%= l user.updated_at, format: :default %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

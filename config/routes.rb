@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: "books#index", as: :root
     resources :books, only: :index
+    resources :users, only: :index
   end
 
   root "static_pages#show", act: "home"
