@@ -1,0 +1,41 @@
+<header class="navbar navbar-fixed-top navbar-inverse ltt-header">
+  <div class="container">
+    <%= link_to t("site.name"), admin_root_path, id: "logo" %>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <%= link_to t("admin.user"), "#" %>
+      </li>
+
+      <li>
+        <%= link_to t("admin.category"), "#" %>
+      </li>
+
+      <li>
+        <%= link_to t("admin.book"), "#" %>
+      </li>
+
+      <li>
+        <%= link_to t("admin.author"), "#" %>
+      </li>
+
+      <li>
+        <%= link_to t("admin.publisher"), "#" %>
+      </li>
+
+      <li>
+        <%= link_to t("admin.request"), "#" %>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <%= current_user.name %> <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <%= link_to t("navbar.logout"), logout_path, method: :delete %>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</header>

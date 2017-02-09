@@ -1,3 +1,3 @@
 class Publisher < ApplicationRecord
-  has_many :books, through: :follows, dependent: :destroy
+  has_many :books, dependent: :destroy
 end
