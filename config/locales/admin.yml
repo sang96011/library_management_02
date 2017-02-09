@@ -1,0 +1,8 @@
+en:
+  admin:
+    user: Users
+    category: Categories
+    book: Books
+    author: Authors
+    publisher: Publishers
+    request: Requests
