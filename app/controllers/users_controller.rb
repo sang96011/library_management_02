@@ -58,10 +58,6 @@ class UsersController < ApplicationController
     redirect_to root_url unless current_user.current_user? @user
   end
 
-  def verify_admin
-    redirect_to root_url unless current_user.admin?
-  end
-
   def find_user
     @user = User.find_by id: params[:id]
     unless @user
