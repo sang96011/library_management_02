@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :rates, dependent: :destroy
   has_many :orders, dependent: :destroy
 
+  attr_accessor :remember_token
   before_save :downcase_email
 
   validates :name, presence: true, length: {maximum: 50}
@@ -46,6 +47,10 @@ class User < ApplicationRecord
 
   def forget
     update_attributes remember_digest: nil
+  end
+
+  def current_user? user
+    self == user
   end
 
   private
