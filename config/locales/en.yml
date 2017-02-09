@@ -5,6 +5,8 @@ en:
   error:
     desc: The form contains
   navbar:
+    home: Home
+    users: Users
     login: Log in
     logout: Logout
     signup: Sign up
@@ -12,11 +14,24 @@ en:
     profile: Profile
     account: Account
   users:
+    all: All users
+    edit: Edit user
+    destroy:
+      deleted: User deleted
+      not_deleted: User not deleted
+    change: Change
+    save_change: Save changes
     not_found: User not found!
+    confirm: You sure?
+    profile_ update: Profile updated
+    your_profile: Update your profile
+    welcome: Welcome to the Library Management App!
     register:
+      please_login: Please log in.
       new: New users?
       form:
         create: Create my account
+        delete: delete
       success: Account has been created! Login now
   sessions:
     login:
