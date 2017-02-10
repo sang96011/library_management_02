@@ -15,4 +15,5 @@ Rails.application.routes.draw do
 
   resources :users, except: :destroy
   resources :books, only: [:show]
+  resources :authors, only: [:show]
 end
