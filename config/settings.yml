@@ -1,2 +1,6 @@
 static_pages:
   per_page: 9
+users:
+  attributes:
+    - name
+    - permission

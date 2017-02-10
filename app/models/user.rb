@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :orders, dependent: :destroy
 
   attr_accessor :remember_token
+
   before_save :downcase_email
 
   validates :name, presence: true, length: {maximum: 50}
@@ -20,6 +21,8 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
   validates :password, presence: true, length: {minimum: 6}, allow_nil: true
+
+  scope :search_data, -> data {where "#{data[:attribute]} LIKE '%#{data[:value]}%'"}
 
   has_secure_password
 
@@ -32,6 +35,10 @@ class User < ApplicationRecord
 
     def new_token
       SecureRandom.urlsafe_base64
+    end
+
+    def search data
+      self.search_data data
     end
   end
 

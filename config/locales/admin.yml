@@ -11,7 +11,8 @@ en:
 
   time:
     <<: *datetime
-
+  error:
+    object_nil : Object nil!
   admin:
     users: Users
     user:
@@ -26,3 +27,4 @@ en:
     author: Authors
     publisher: Publishers
     request: Requests
+    search: Search

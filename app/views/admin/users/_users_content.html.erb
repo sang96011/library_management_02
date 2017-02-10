@@ -1,0 +1,9 @@
+<% @users.each do |user| %>
+  <tr>
+    <td class="col-md-2"><%= user.name %></td>
+    <td class="col-md-2"><%= user.email %></td>
+    <td class="col-md-1"><%= user.permission %></td>
+    <td class="col-md-1"><%= l user.created_at, format: :default %></td>
+    <td class="col-md-1"><%= l user.updated_at, format: :default %></td>
+  </tr>
+<% end %>
