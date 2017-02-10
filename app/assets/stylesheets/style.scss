@@ -240,7 +240,12 @@
     opacity: 1;
     border-bottom: 5px solid rgb(55, 61, 84);
   }
+}
 
+.book-detail{
+  .img{
+    border-right: 2px solid gray;
+  }
 }
 
 .users {

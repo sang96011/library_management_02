@@ -63,15 +63,6 @@ ActiveRecord::Schema.define(version: 20170209074442) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "follows", force: :cascade do |t|
-    t.integer  "follower_id"
-    t.integer  "followed_id"
-    t.string   "follower_type"
-    t.string   "followed_type"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
   create_table "order_items", force: :cascade do |t|
     t.date     "due_date"
     t.date     "returned_date"
@@ -108,6 +99,15 @@ ActiveRecord::Schema.define(version: 20170209074442) do
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_rates_on_book_id"
     t.index ["user_id"], name: "index_rates_on_user_id"
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.string   "follower_type"
+    t.string   "followed_type"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "users", force: :cascade do |t|

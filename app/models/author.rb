@@ -1,7 +1,8 @@
 class Author < ApplicationRecord
-  has_many :follows, as: :followed
+  has_many :followed, as: :followed, class_name: Relationship.name
+  has_many :follower, as: :follower, class_name: Relationship.name
   has_many :followed_users, through: :follows, source: :followed,
-    source_type: "User", dependent: :destroy
-  has_many :books, through: :follows, source: :followed,
-    source_type: "Book", dependent: :destroy
+    source_type: User.name, dependent: :destroy
+  has_many :books, through: :follows, source: :follower,
+    source_type: Book.name, dependent: :destroy
 end

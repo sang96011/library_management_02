@@ -12,11 +12,17 @@ en:
   time:
     <<: *datetime
 
+  dates:
+    formats:
+      default: "%d-%m-%y"
+
   site:
     name: Book Library
     sologan: Sologan
+
   error:
     desc: The form contains
+
   navbar:
     home: Home
     users: Users
@@ -26,6 +32,7 @@ en:
     setting: Setting
     profile: Profile
     account: Account
+
   users:
     all: All users
     edit: Edit user
@@ -46,20 +53,42 @@ en:
         create: Create my account
         delete: delete
       success: Account has been created! Login now
+
   sessions:
     login:
       remember: Remember me on this computer
       signup_now: Sign up now!
     success: Welcome back
     error: Invalid email/password combination
+
   help:
     title: Help page
+
   contact:
     title: Contact page
+
   search:
     title: Search our website
+
   home:
     catelog: All Catalog
+
   item:
     currency: $
     add_to_cart: Add to cart
+
+  books:
+    show:
+      title: Detail -
+      author: Author
+      rate: Rate
+      price: Price
+      status: Status
+      quantity: Quantity
+      publish_date: Publish date
+      pages: Total pages
+      description: Description
+      comments: Comments
+      recommend_books:  Recommend books
+    error:
+      book_not_found: Book not found!
