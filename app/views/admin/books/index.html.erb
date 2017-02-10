@@ -1,5 +1,22 @@
-<div class="ltt-books-index">
-  <% @books.each do |book| %>
-    <%= book.title  %>
-  <% end %>
-</div>
+<h1><%= t "admin.book.all" %></h1>
+<table class="table table-bordered table table-striped">
+  <thead>
+    <tr>
+      <th class="col-md-2"><%= t "admin.book.title" %></th>
+      <th class="col-md-2"><%= t "admin.book.description" %></th>
+      <th class="col-md-1"><%= t "admin.book.image" %></th>
+      <th class="col-md-1"><%= t "admin.book.price" %></th>
+      <th class="col-md-1"><%= t "admin.book.status" %></th>
+      <th class="col-md-1"><%= t "admin.book.rate_point" %></th>
+      <th class="col-md-1"><%= t "admin.book.view_count" %></th>
+      <th class="col-md-1"><%= t "admin.book.quantity" %></th>
+      <th class="col-md-1"><%= t "admin.book.pages" %></th>
+      <th class="col-md-1"><%= t "admin.book.publish_date" %></th>
+      <th class="col-md-1"><%= t "admin.book.created_at" %></th>
+      <th class="col-md-1"><%= t "admin.book.updated_at" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @books %>
+  </tbody>
+</table>

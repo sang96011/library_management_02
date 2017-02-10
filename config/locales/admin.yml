@@ -12,6 +12,7 @@ en:
   time:
     <<: *datetime
   error:
+    fail: Sorry, something went wrong
     object_nil : Object nil!
   admin:
     users: Users
@@ -23,8 +24,23 @@ en:
       created_at: Create at
       updated_at: Update at
     category: Categories
-    book: Books
     author: Authors
     publisher: Publishers
     request: Requests
     search: Search
+    book:
+      name: Books
+      all: All Books
+      title: Title
+      description: Description
+      image: Image
+      price: Price
+      status: Status
+      rate_point: Rate point
+      view_count: View count
+      publish_date: Publish date
+      quantity: Quantity
+      pages: Pages
+      publisher_id: Publisher id
+      created_at: Create at
+      updated_at: Update at
