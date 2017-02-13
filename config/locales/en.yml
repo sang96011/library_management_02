@@ -79,7 +79,7 @@ en:
 
   books:
     show:
-      title: Detail -
+      title: "Detail - "
       author: Author
       rate: Rate
       price: Price
@@ -92,3 +92,9 @@ en:
       recommend_books:  Recommend books
     error:
       book_not_found: Book not found!
+  authors:
+    show:
+      title: "Author: "
+      list_books_of_author: "List books of "
+    error:
+      author_not_found: Author not found!

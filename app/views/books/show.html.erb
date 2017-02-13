@@ -13,7 +13,7 @@
         <div class="col-sm-3"><%= t "books.author" %></div>
         <div class="col-sm-9">
           <% @book.authors.each do |author| %>
-            <%= link_to author.name, "#" %>,
+            <%= link_to author.name, author %>
           <% end %>
         </div>
         <div class="col-sm-3"><%= t "books.publish_date" %></div>
