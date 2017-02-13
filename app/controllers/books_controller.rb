@@ -2,6 +2,9 @@ class BooksController < ApplicationController
   before_action :find_book, only: [:show]
 
   def show
+    @comment = @book.comments.new
+    @comments = @book.comments
+      .paginate page: params[:page], per_page: Settings.static_pages.per_page
   end
 
   private

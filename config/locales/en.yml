@@ -90,6 +90,7 @@ en:
       description: Description
       comments: Comments
       recommend_books:  Recommend books
+      send_comment: Send comment
     error:
       book_not_found: Book not found!
   authors:
@@ -98,3 +99,7 @@ en:
       list_books_of_author: "List books of "
     error:
       author_not_found: Author not found!
+  comments:
+    create:
+      success: Commented
+      error: Something wrong! please check again!
