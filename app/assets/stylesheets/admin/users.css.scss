@@ -1,0 +1,21 @@
+.ltt-users-index-header {
+
+  .ltt-users-search {
+    margin-left: 80px;
+    margin-top: 20px;
+    display: inline-block;
+    width: 100%;
+
+    .users-search-select {
+      width: 15%;
+      float: left;
+      margin-right: 10px;
+    }
+
+    .users-search-input {
+      float: left;
+      width: 50%;
+      margin-right: 10px;
+    }
+  }
+}

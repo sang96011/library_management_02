@@ -1,4 +1,21 @@
-<h1><%= t "admin.user.all" %></h1>
+<div class="ltt-users-index-header">
+  <h1 class="col-md-2"><%= t "admin.user.all" %></h1>
+  <div class="row col-md-10">
+    <div class="col-md-6 ltt-users-search">
+      <%= form_tag admin_users_path, method: :get, remote: true do %>
+        <%= select_tag :attribute, options_for_select(
+          Settings.users.attributes), class: "form-control
+          users-search-select" %>
+        <%= text_field_tag :value, "", placeholder: t("admin.search"),
+          class: "form-control users-search-input", value: nil %>
+        <%= submit_tag t("admin.search"), class: "btn btn-primary" %>
+        <div class="clearfix"></div>
+      <% end %>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>
+<div class="row">
 <table class="table table-bordered table table-striped">
   <thead>
     <tr>
@@ -9,15 +26,7 @@
       <th class="col-md-1"><%= t "admin.user.updated_at" %></th>
     </tr>
   </thead>
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td class="col-md-2"><%= user.name %></td>
-        <td class="col-md-2"><%= user.email %></td>
-        <td class="col-md-1"><%= user.permission %></td>
-        <td class="col-md-1"><%= l user.created_at, format: :default %></td>
-        <td class="col-md-1"><%= l user.updated_at, format: :default %></td>
-      </tr>
-    <% end %>
+  <tbody class="ltt-users-content">
+    <%= render "users_content" %>
   </tbody>
 </table>
