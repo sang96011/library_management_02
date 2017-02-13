@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String"><%= t "admin.user.name" %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t "admin.user.email" %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t "admin.user.permission" %>
+          </Data></Cell>
+        <Cell><Data ss:Type="DateTime"><%= t "admin.user.created_at" %>
+          </Data></Cell>
+        <Cell><Data ss:Type="DateTime"><%= t "admin.user.updated_at" %>
+          </Data></Cell>
+      </Row>
+    <% @users.each do |user| %>
+      <Row>
+        <Cell><Data ss:Type="String"><%= user.name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= user.email %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= user.permission %></Data></Cell>
+        <Cell><Data ss:Type="DateTime"><%= user.created_at %></Data></Cell>
+        <Cell><Data ss:Type="DateTime"><%= user.updated_at %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

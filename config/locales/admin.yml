@@ -13,6 +13,11 @@ en:
     <<: *datetime
   error:
     object_nil : Object nil!
+  export:
+    name: Export
+    formats:
+      excel: Excel
+      csv: CSV
   admin:
     users: Users
     user:

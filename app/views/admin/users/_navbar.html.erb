@@ -1,0 +1,7 @@
+<p>
+  <%= t "export.name" %>
+  <%= link_to t("export.formats.csv"), admin_users_path(format: "csv",
+    value: params[:value], attribute: params[:attribute]) %> |
+  <%= link_to t("export.formats.excel"), admin_users_path(format: "xls",
+    value: params[:value], attribute: params[:attribute]) %>
+</p>
