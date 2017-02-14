@@ -2,11 +2,11 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :follower, as: :follower, class_name: Relationship.name
   has_many :followed, as: :followed, class_name: Relationship.name
-  has_many :follower_authors, through: :follows, source: :follower,
+  has_many :follower_authors, through: :follower, source: :follower,
     source_type: Author.name, dependent: :destroy
-  has_many :follower_books, through: :follows, source: :follower,
+  has_many :follower_books, through: :follower, source: :followed,
     source_type: Book.name, dependent: :destroy
-  has_many :follower_users, through: :follows, source: :follower,
+  has_many :follower_users, through: :follower, source: :follower,
     source_type: User.name, dependent: :destroy
   has_many :rates, dependent: :destroy
   has_many :orders, dependent: :destroy
@@ -67,6 +67,14 @@ class User < ApplicationRecord
 
   def current_user? user
     self == user
+  end
+
+  def like_book book
+    follower_books << book
+  end
+
+  def unlike_book book
+    follower_books.delete book
   end
 
   private

@@ -91,6 +91,9 @@ en:
       comments: Comments
       recommend_books:  Recommend books
       send_comment: Send comment
+      others: Others
+      like: Like
+      unlike: Unlike
     error:
       book_not_found: Book not found!
   authors:

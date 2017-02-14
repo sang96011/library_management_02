@@ -1,10 +1,9 @@
-class BooksController < ApplicationController
-  before_action :find_book, only: [:show]
+class LikeBooksController < ApplicationController
+  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :find_book, only: [:create, :destroy]
 
-  def show
-    @comment = @book.comments.new
-    @comments = @book.comments
-      .paginate page: params[:page], per_page: Settings.static_pages.per_page
+  def create
+    current_user.like_book @book
     @user_relationship_book =
       if current_user.follower_books.include? @book
         current_user.follower.find_by followed_id: @book.id,
@@ -12,9 +11,13 @@ class BooksController < ApplicationController
       end
   end
 
+  def destroy
+    current_user.unlike_book @book
+  end
+
   private
   def find_book
-    @book = Book.find_by id: params[:id]
+    @book = Book.find_by id: params[:book_id]
     unless @book
       flash[:danger] = t "books.error.book_not_found"
       redirect_to root_path

@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="col-sm-3">
+      <%= @book.users_like.count %> <%= t "books.show.others" %>
+      <% if @user_relationship_book %>
+        <%= form_for :user_relationship_book,
+          url: book_like_book_path(@book, @user_relationship_book),
+          method: :delete, remote: true do |f| %>
+          <%= hidden_field_tag :followed_id, @book.id %>
+          <%= f.submit t("books.show.unlike"), class: "btn btn-primary" %>
+        <% end %>
+      <% else %>
+        <%= form_for :user_relationship_book,
+          url: book_like_books_path(@book),
+          method: :post, remote: true do |f| %>
+          <%= hidden_field_tag :followed_id, @book.id %>
+          <%= f.submit t("books.show.like"), class: "btn btn-primary" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

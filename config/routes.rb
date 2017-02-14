@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :users, except: :destroy
   resources :books, only: [:show] do
     resources :comments, only: [:create]
+    resources :like_books, only: [:create, :destroy]
   end
   resources :authors, only: [:show]
 end
