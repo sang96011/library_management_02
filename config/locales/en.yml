@@ -34,6 +34,12 @@ en:
     account: Account
 
   users:
+    show:
+      others: Followers
+      follow: Follow
+      unfollow: Unfollow
+      favorite_authors: Favorite Authors
+      favorite_books: Favorite Books
     all: All users
     edit: Edit user
     destroy:

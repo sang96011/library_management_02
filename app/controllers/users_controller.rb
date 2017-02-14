@@ -9,6 +9,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    if logged_in? && current_user.follower_users.include?(@user)
+      @user_relationship_user =
+        current_user.follower.find_by followed_id: @user.id,
+        follower_type: User.name, followed_type: User.name
+    end
   end
 
   def new

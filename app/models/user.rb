@@ -6,7 +6,9 @@ class User < ApplicationRecord
     source_type: Author.name, dependent: :destroy
   has_many :follower_books, through: :follower, source: :followed,
     source_type: Book.name, dependent: :destroy
-  has_many :follower_users, through: :follower, source: :follower,
+  has_many :follower_users, through: :follower, source: :followed,
+    source_type: User.name, dependent: :destroy
+  has_many :followed_users, through: :followed, source: :follower,
     source_type: User.name, dependent: :destroy
   has_many :rates, dependent: :destroy
   has_many :orders, dependent: :destroy
@@ -83,6 +85,14 @@ class User < ApplicationRecord
 
   def unfollow_author author
     follower_authors.delete author
+  end
+
+  def follow_user user
+    follower_users << user
+  end
+
+  def unfollow_user user
+    follower_users.delete user
   end
 
   private
