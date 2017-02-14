@@ -49,3 +49,6 @@ en:
       publisher_id: Publisher id
       created_at: Create at
       updated_at: Update at
+      namesite: Add new book
+      save: Save
+      add_book: Add book

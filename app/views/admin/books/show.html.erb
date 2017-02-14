@@ -17,7 +17,7 @@
           <% end %>
         </div>
         <div class="col-sm-3"><%= t "books.publish_date" %></div>
-        <div class="col-sm-9"><%= l Time.at(@book.publish_date), format: :default %></div>
+        <div class="col-sm-9"><%= l @book.publish_date, format: :default %></div>
         <div class="col-sm-3"><%= t "books.show.quantity" %></div>
         <div class="col-sm-9"><%= @book.quantity %></div>
         <div class="col-sm-3"><%= t "books.show.pages" %></div>
