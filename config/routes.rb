@@ -18,5 +18,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
     resources :like_books, only: [:create, :destroy]
   end
-  resources :authors, only: [:show]
+  resources :authors, only: [:show] do
+    resources :follow_authors, only: [:create, :destroy]
+  end
 end

@@ -5,7 +5,12 @@
       <%= image_tag @author.image, class: "img-book img-responsive center-block" %>
     </div>
     <div class="col-sm-9">
-      <h2><%= @author.name %></h2>
+      <h2>
+        <%= @author.name %>
+        <small id="stats">
+          <%= render "stats" %>
+        </small>
+      </h2>
       <hr>
       <h5><%= l Time.at(@author.date_of_birth), format: :default %></h5>
       <hr>

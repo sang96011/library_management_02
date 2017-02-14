@@ -3,6 +3,12 @@ class AuthorsController < ApplicationController
   def show
     @books = @author.books
       .paginate page: params[:page], per_page: Settings.static_pages.per_page
+
+      if logged_in? && current_user.follower_authors.include?(@author)
+        @user_relationship_author =
+          current_user.follower.find_by followed_id: @author.id,
+          followed_type: Author.name
+      end
   end
 
   private
