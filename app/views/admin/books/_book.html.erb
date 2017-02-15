@@ -11,4 +11,8 @@
   <td class="col-md-1"><%= book.publish_date %></td>
   <td class="col-md-1"><%= l book.created_at, format: :default %></td>
   <td class="col-md-1"><%= l book.updated_at, format: :default %></td>
+  <td class="col-md-1">
+  <%= link_to t("admin.book.action.edit"), edit_admin_book_path(book),
+    id: "open-contacts-dialog-btn", class: "btn btn-primary inbox-sf-add-btn tip" %>
+  </td>
 </tr>

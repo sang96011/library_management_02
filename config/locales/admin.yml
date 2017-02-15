@@ -52,3 +52,10 @@ en:
       namesite: Add new book
       save: Save
       add_book: Add book
+      update:
+        namesite: Update book
+        success: "Update successful!"
+        danger: "Update fails, please try again!"
+      action:
+        title: "Action"
+        edit: "Edit"

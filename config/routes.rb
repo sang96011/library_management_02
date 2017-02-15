@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :admin do
     root to: "books#index", as: :root
-    resources :books, except: [:update, :edit, :destroy]
+    resources :books, except: [:destroy]
     resources :users, only: :index
   end
 
