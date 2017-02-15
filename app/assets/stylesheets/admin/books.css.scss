@@ -1,0 +1,21 @@
+.ltt-books-index-header {
+
+  .ltt-books-search {
+    margin-left: 80px;
+    margin-top: 20px;
+    display: inline-block;
+    width: 100%;
+
+    .books-search-select {
+      width: 20%;
+      float: left;
+      margin-right: 10px;
+    }
+
+    .books-search-input {
+      float: left;
+      width: 50%;
+      margin-right: 10px;
+    }
+  }
+}
