@@ -16,7 +16,7 @@ class Admin::PublishersController < Admin::AdminController
   end
 
   def show
-    @publishers = @publishers.books
+    @books = @publisher.books
       .paginate page: params[:page], per_page: Settings.static_pages.per_page
   end
 

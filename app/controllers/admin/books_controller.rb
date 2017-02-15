@@ -66,7 +66,7 @@ class Admin::BooksController < Admin::AdminController
 
   def book_params
     params.require(:book).permit :title, :image, :pages, :price, :quantity,
-      :publish_date, :publisher_id
+      :publish_date, :publisher_id, :description, :status
   end
 
   def load_data
