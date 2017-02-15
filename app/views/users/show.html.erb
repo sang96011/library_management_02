@@ -4,7 +4,26 @@
     <section class="user_info">
       <h1>
         <%= @user.name %>
+        <small id="stats">
+          <%= render "stats" %>
+        </small>
       </h1>
     </section>
   </aside>
+  <div class="col-sm-8">
+    <h3>
+      <%= t "users.show.favorite_authors" %>: <%= @user.follower_authors.count %>
+    </h3>
+    <hr>
+    <% @user.follower_authors.each do |author| %>
+      <%= link_to author.name, author %>
+    <% end %>
+    <h3>
+      <%= t "users.show.favorite_books" %>: <%= @user.follower_books.count %>
+    </h3>
+    <hr>
+    <% @user.follower_books.each do |book| %>
+      <%= link_to book.title, book %>
+    <% end %>
+  </div>
 </div>

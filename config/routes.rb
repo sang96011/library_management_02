@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  resources :users, except: :destroy
+  resources :users, except: :destroy do
+    resources :follow_users, only: [:create, :destroy]
+  end
   resources :books, only: [:show] do
     resources :comments, only: [:create]
     resources :like_books, only: [:create, :destroy]

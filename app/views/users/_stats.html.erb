@@ -1,0 +1,19 @@
+<br>
+<%= @user.followed_users.count %> <%= t "users.show.others" %>
+<% unless current_user == @user %>
+  <% if @user_relationship_user %>
+    <%= form_for :user_relationship_user,
+      url: user_follow_user_path(@user, @user_relationship_user),
+      method: :delete, remote: true do |f| %>
+      <%= hidden_field_tag :followed_id, @user.id %>
+      <%= f.submit t("users.show.unfollow"), class: "btn btn-primary" %>
+    <% end %>
+  <% else %>
+    <%= form_for :user_relationship_user,
+      url: user_follow_users_path(@user),
+      method: :post, remote: true do |f| %>
+      <%= hidden_field_tag :followed_id, @user.id %>
+      <%= f.submit t("users.show.follow"), class: "btn btn-primary" %>
+    <% end %>
+  <% end %>
+<% end %>
