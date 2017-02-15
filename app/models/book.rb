@@ -19,4 +19,14 @@ class Book < ApplicationRecord
   validates :quantity, presence: true, length: {maximum: 4},
     numericality: {only_integer: true}
   validates :publish_date, presence: true
+
+  scope :search_data, -> data {joins("LEFT JOIN book_categories
+    on books.id = book_categories.book_id").where "title LIKE
+    '%#{data[:content]}%' AND category_id = #{data[:category]}"}
+
+  class << self
+    def search data
+      self.search_data data
+    end
+  end
 end

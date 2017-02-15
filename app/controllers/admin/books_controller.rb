@@ -1,9 +1,13 @@
 class Admin::BooksController < Admin::AdminController
   before_action :find_book, only: [:show, :edit, :update]
-  before_action :load_data, only: [:new, :edit]
+  before_action :load_data, only: [:new, :edit, :index]
 
   def index
-    @books = Book.paginate page: params[:page], per_page: Settings.per_page
+    @books = if params[:content]
+      Book.search params
+    else
+      Book.all
+    end.paginate page: params[:page], per_page: Settings.per_page
   end
 
   def edit
