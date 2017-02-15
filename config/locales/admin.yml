@@ -32,7 +32,6 @@ en:
       created_at: Create at
       updated_at: Update at
     category: Categories
-    author: Authors
     publisher: Publishers
     request: Requests
     search: Search
@@ -62,7 +61,13 @@ en:
       action:
         title: "Action"
         edit: "Edit"
-        destroy: Destroy
       destroy:
         success: "Delete successful!"
         danger: "Delete fail!"
+    author:
+      title: Authors
+      all: All authors
+      name: Name
+      image: Image
+      date_of_birth: Date of birth
+      body: Body

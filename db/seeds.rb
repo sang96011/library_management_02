@@ -7,11 +7,20 @@ publisher.books.create! title: "Harry potter", pages: 500, price: 20000,
 Category.create! name: "Literature book"
 Category.create! name: "Detective book"
 Category.create! name: "science book"
-Author.create! name: "J. K. Rowling"
-Author.create! name: "Dale Carnegie"
 BookCategory.create! book_id: 1, category_id: 1
 BookCategory.create! book_id: 1, category_id: 2
 BookCategory.create! book_id: 1, category_id: 3
+
+10.times do
+  name = Faker::Name.name
+  date_of_birth = Faker::Date.between("1/1/1950", "31/12/1970")
+  Author.create! name: name, date_of_birth: date_of_birth
+end
+
+10.times do
+  name = Faker::Name.name
+  Publisher.create! name: name
+end
 
 10.times do |n|
   name = Faker::Name.name
