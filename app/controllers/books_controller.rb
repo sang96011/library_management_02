@@ -6,7 +6,7 @@ class BooksController < ApplicationController
     @comments = @book.comments
       .paginate page: params[:page], per_page: Settings.static_pages.per_page
     @user_relationship_book =
-      if current_user.follower_books.include? @book
+      if logged_in? && current_user.follower_books.include?(@book)
         current_user.follower.find_by followed_id: @book.id,
           followed_type: Book.name
       end

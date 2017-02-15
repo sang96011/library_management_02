@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :follower, as: :follower, class_name: Relationship.name
   has_many :followed, as: :followed, class_name: Relationship.name
-  has_many :follower_authors, through: :follower, source: :follower,
+  has_many :follower_authors, through: :follower, source: :followed,
     source_type: Author.name, dependent: :destroy
   has_many :follower_books, through: :follower, source: :followed,
     source_type: Book.name, dependent: :destroy
@@ -75,6 +75,14 @@ class User < ApplicationRecord
 
   def unlike_book book
     follower_books.delete book
+  end
+
+  def follow_author author
+    follower_authors << author
+  end
+
+  def unfollow_author author
+    follower_authors.delete author
   end
 
   private
