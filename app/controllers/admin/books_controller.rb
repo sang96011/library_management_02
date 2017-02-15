@@ -1,11 +1,32 @@
 class Admin::BooksController < Admin::AdminController
-  before_action :find_book, only: [:show]
+  before_action :find_book, only: :show
+  before_action :load_data, only: :new
 
   def index
-    @books = Book.all
+    @books = Book.paginate page: params[:page], per_page: Settings.per_page
+  end
+
+  def new
+    @book = Book.new
   end
 
   def show
+  end
+
+  def create
+    @book = Book.new book_params
+    if @book.save
+      params[:book][:author_ids].each do |author_id|
+        @book.book_authors.create! author_id: author_id unless author_id.blank?
+      end
+      params[:book][:category_ids].each do |category_id|
+        @book.book_categories.create! category_id: category_id unless category_id.blank?
+      end
+      redirect_to admin_root_path
+    else
+      load_data
+      render :new
+    end
   end
 
   private
@@ -15,5 +36,14 @@ class Admin::BooksController < Admin::AdminController
       flash[:danger] = t "books.error.book_not_found"
       redirect_to root_path
     end
+  end
+
+  def book_params
+    params.require(:book).permit :title, :image, :pages, :price, :quantity,
+      :publish_date, :publisher_id
+  end
+
+  def load_data
+    @supports = Supports::NewBook.new
   end
 end

@@ -1,0 +1,39 @@
+<%= form_for [:admin, @book] do |f| %>
+  <%= render "shared/error_messages", object: @book %>
+
+  <%= f.label :categories %>
+  <%= f.select :category_ids, @supports.categories.collect {|category|
+    [category.name, category.id]}, {selected: @supports.categories.first},
+      {multiple: true, class: "form-control"} %>
+
+  <%= f.label :authors %>
+  <%= f.select :author_ids, @supports.authors.collect {|author|
+    [author.name, author.id]}, {selected: @supports.authors.first},
+      {multiple: true, class: "form-control"} %>
+
+  <%= f.label :publisher %>
+  <%=  f.select :publisher_id, @supports.publishers.collect {|publisher|
+    [publisher.name, publisher.id]}, {}, class: "form-control" %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title, class: "form-control" %>
+
+  <%= f.label :pages %>
+  <%= f.number_field :pages, class: "form-control" %>
+
+  <%= f.label :price %>
+  <%= f.number_field :price, class: "form-control" %>
+
+  <%= f.label :quantity %>
+  <%= f.number_field :quantity, class: "form-control" %>
+
+  <%= f.label :publish_date %>
+  <%= f.date_field :publish_date, class: "form-control datepicker" %>
+  <br>
+  <span class="image">
+    <%= f.label :image %>
+    <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+  </span>
+  <br>
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

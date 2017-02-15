@@ -20,3 +20,7 @@
     <%= render @books %>
   </tbody>
 </table>
+<div class="ltt-users-navbar pull-right">
+  <%= link_to t("admin.book.add_book"), new_admin_book_path, id: "open-contacts-dialog-btn",
+    class: "btn btn-primary inbox-sf-add-btn tip" %>
+</div>

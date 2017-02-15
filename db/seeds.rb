@@ -2,7 +2,8 @@ User.create! name: "Le Tat Tung", email: "letattungtb@gmail.com",
   password: "tung123", password_confirmation: "tung123", is_admin: true
 
 publisher = Publisher.create! name: "Le Tat Tung"
-publisher.books.create! title: "Harry potter"
+publisher.books.create! title: "Harry potter", pages: 500, price: 20000,
+  quantity:10, publish_date: "1/1/2001"
 
 10.times do |n|
   name = Faker::Name.name
