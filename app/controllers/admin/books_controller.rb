@@ -1,9 +1,22 @@
 class Admin::BooksController < Admin::AdminController
-  before_action :find_book, only: :show
-  before_action :load_data, only: :new
+  before_action :find_book, only: [:show, :edit, :update]
+  before_action :load_data, only: [:new, :edit]
 
   def index
     @books = Book.paginate page: params[:page], per_page: Settings.per_page
+  end
+
+  def edit
+  end
+
+  def update
+    if @book.update_attributes book_params
+      flash[:success] = t "admin.book.update.success"
+      redirect_to admin_books_path
+    else
+      @categories = Category.all
+      render :edit
+    end
   end
 
   def new
