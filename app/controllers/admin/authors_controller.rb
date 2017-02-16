@@ -1,4 +1,6 @@
 class Admin::AuthorsController < Admin::AdminController
+  before_action :find_author, only: [:show]
+
   def index
     @authors = if params[:value]
       Author.search params
@@ -10,11 +12,20 @@ class Admin::AuthorsController < Admin::AdminController
       format.html
       format.csv {send_data @authors.to_csv}
       format.xls {send_data @authors.to_csv(col_sep: "\t")}
-     end
+    end
   end
 
   def show
-    @authors = Author.find_by id: params[:id]
-    check_nil @authors
+    @books = @author.books
+      .paginate page: params[:page], per_page: Settings.static_pages.per_page
+  end
+
+  private
+  def find_author
+    @author = Author.find_by id: params[:id]
+    unless @author
+      flash[:danger] = t "admin.book.error.not_found"
+      redirect_to root_path
+    end
   end
 end

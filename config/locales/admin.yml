@@ -71,3 +71,5 @@ en:
       image: Image
       date_of_birth: Date of birth
       body: Body
+      error:
+        not_found: Author not found!

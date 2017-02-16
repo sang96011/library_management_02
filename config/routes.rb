@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     root to: "books#index", as: :root
     resources :books
     resources :users, only: :index
-    resources :authors, only: :index
+    resources :authors, only: [:index, :show]
   end
 
   root "static_pages#show", act: "home"
