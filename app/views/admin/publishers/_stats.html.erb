@@ -1,0 +1,17 @@
+<br>
+<%= @publisher.follower_users.count %>
+<%= t "publishers.show.others" %>
+<% if @follow_publisher %>
+  <%= form_for :user_relationship_publisher,
+    url: publisher_follow_publisher_path(@publisher, @follow_publisher),
+    method: :delete, remote: true do |f| %>
+    <%= f.submit t("books.show.unlike"), class: "btn btn-primary" %>
+  <% end %>
+<% else %>
+  <%= form_for :user_relationship_publisher,
+    url: publisher_follow_publishers_path(@publisher),
+    method: :post, remote: true do |f| %>
+    <%= f.submit t("books.show.like"), class: "btn btn-primary" %>
+  <% end %>
+<%= hidden_field_tag :followed_id, @publisher.id %>
+<% end %>

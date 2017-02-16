@@ -107,3 +107,25 @@ en:
       destroy:
         success: "Delete successful!"
         danger: "Delete fail!"
+    publisher:
+      title: Publishers
+      all: All publisher
+      name: Name
+      error:
+        not_found: Publisher not found!
+      add_publisher: Add publisher
+      namesite: Add new publisher
+      save: Save
+      new:
+        success: "Add publisher successful!"
+        danger: "Add publisher fails, please try again!"
+      update:
+        namesite: Update publisher
+        success: "Update successful!"
+        danger: "Update fails, please try again!"
+      action:
+        title: "Action"
+        edit: "Edit"
+      destroy:
+        success: "Delete successful!"
+        danger: "Delete fail!"

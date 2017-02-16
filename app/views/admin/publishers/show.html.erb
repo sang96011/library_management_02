@@ -1,0 +1,41 @@
+<% provide :title, t("publishers.show.title") + @publisher.name %>
+<div class="row book-detail">
+  <div class="col-sm-12">
+    <div class="col-sm-9">
+      <h2>
+        <%= @publisher.name %>
+        <small id="stats">
+          <%= render "stats" %>
+        </small>
+      </h2>
+    </div>
+  </div>
+  <div class="col-sm-12">
+    <h3 class="text-right"><%= t "publishers.show.list_books_of_publisher" %>
+      <%= @publisher.name %></h3>
+    <hr>
+    <div class="col-sm-9 col-sm-offset-3 list-items">
+      <% @books.each do |book| %>
+        <div class="col-sm-4 item">
+          <%= link_to book do %>
+            <div class="item-image">
+              <%= image_tag "http://allstore-html.real-web.pro/img/catalog-gallery/2/1.jpg" %>
+              <div class="item-action">
+                <div class="item-box">
+                  <p class="item-option text-center">
+                  </p>
+                  <button class="btn"><%= t "item.add_to_cart" %></button>
+                </div>
+              </div>
+            </div>
+          <% end %>
+          <i class="item-info">i</i>
+          <h4 class="text-center"><%= link_to book.title, "#", title: book.title %></h4>
+          <h4 class="text-center"><%= book.price %> <%= t "item.currency" %></h4>
+        </div>
+      <% end %>
+      <hr/>
+      <%= will_paginate @books %>
+    </div>
+  </div>
+</div>
