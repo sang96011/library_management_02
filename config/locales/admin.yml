@@ -31,6 +31,12 @@ en:
       permission: Permission
       created_at: Create at
       updated_at: Update at
+      namesite: Add new user
+      save: Save
+      add_user: Add user
+      new:
+        success: "Add user successful!"
+        danger: "Add user fails, please try again!"
     category: Categories
     publisher: Publishers
     request: Requests
