@@ -1,0 +1,13 @@
+<h1><%= t "admin.author.all" %></h1>
+<table class="table table-bordered table table-striped">
+  <thead>
+    <tr>
+      <th class="col-md-2"><%= t "admin.author.name" %></th>
+      <th class="col-md-2"><%= t "admin.author.body" %></th>
+      <th class="col-md-1"><%= t "admin.author.date_of_birth" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @authors %>
+  </tbody>
+</table>
