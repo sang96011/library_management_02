@@ -4,6 +4,9 @@
   <td class="col-md-1"><%= l author.date_of_birth, format: :default %></td>
   <td class="col-md-1">
     <%= link_to t("admin.author.action.edit"), edit_admin_author_path(author),
-      id: "open-contacts-dialog-btn", class: "btn btn-primary inbox-sf-add-btn tip" %>
+      id: "open-contacts-dialog-btn", class: "btn btn-primary inbox-sf-add-btn tip"%>
+    <%= link_to t("admin.author.action.delete"), admin_author_url(author),
+      id: "open-contacts-dialog-btn", class: "btn btn-primary inbox-sf-add-btn tip",
+      method: :delete, data: {confirm: t("admin.index.confirm")} %>
   </td>
 </tr>

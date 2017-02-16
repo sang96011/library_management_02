@@ -86,3 +86,6 @@ en:
       action:
         title: "Action"
         edit: "Edit"
+      destroy:
+        success: "Delete successful!"
+        danger: "Delete fail!"
