@@ -1,5 +1,5 @@
 class Admin::AuthorsController < Admin::AdminController
-  before_action :find_author, only: [:show]
+  before_action :find_author, only: [:show, :edit, :update]
 
   def index
     @authors = if params[:value]
@@ -32,6 +32,19 @@ class Admin::AuthorsController < Admin::AdminController
     else
       flash[:danger] = t "admin.author.new.danger"
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @author.update_attributes author_params
+      flash[:success] = t "admin.author.update.success"
+      redirect_to admin_authors_path
+    else
+      flash[:danger] = t "admin.author.update.danger"
+      render :edit
     end
   end
 

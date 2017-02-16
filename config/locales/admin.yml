@@ -79,3 +79,10 @@ en:
       new:
         success: "Add author successful!"
         danger: "Add author fails, please try again!"
+      update:
+        namesite: Update author
+        success: "Update successful!"
+        danger: "Update fails, please try again!"
+      action:
+        title: "Action"
+        edit: "Edit"
