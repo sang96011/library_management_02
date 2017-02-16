@@ -73,3 +73,9 @@ en:
       body: Body
       error:
         not_found: Author not found!
+      add_author: Add author
+      namesite: Add new author
+      save: Save
+      new:
+        success: "Add author successful!"
+        danger: "Add author fails, please try again!"

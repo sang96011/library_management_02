@@ -6,6 +6,10 @@ class Author < ApplicationRecord
     source_type: User.name, dependent: :destroy
   has_many :book_authors, dependent: :destroy
   has_many :books, through: :book_authors, foreign_key: :author_id
+
+  validates :name, presence: true, length: {maximum: 50}
+  validates :date_of_birth, presence: true
+
   scope :search_data, ->data {where "name LIKE '%#{data[:value]}%'"}
 
   class << self
