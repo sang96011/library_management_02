@@ -1,5 +1,5 @@
 class Admin::BooksController < Admin::AdminController
-  before_action :find_book, only: [:show, :edit, :update]
+  before_action :find_book, except: [:new, :index, :create]
   before_action :load_data, only: [:new, :edit, :index]
 
   def index
@@ -44,6 +44,15 @@ class Admin::BooksController < Admin::AdminController
       load_data
       render :new
     end
+  end
+
+  def destroy
+    if @book.destroy
+      flash[:success] = t "admin.book.destroy.success"
+    else
+      flash[:danger] = t "adnin.book.destroy.danger"
+    end
+    redirect_to :back
   end
 
   private

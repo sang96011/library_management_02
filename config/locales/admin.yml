@@ -20,6 +20,9 @@ en:
       excel: Excel
       csv: CSV
   admin:
+    index:
+      delete: "Delete"
+      confirm: "You sure?"
     users: Users
     user:
       all: All Users
@@ -59,3 +62,7 @@ en:
       action:
         title: "Action"
         edit: "Edit"
+        destroy: Destroy
+      destroy:
+        success: "Delete successful!"
+        danger: "Delete fail!"
