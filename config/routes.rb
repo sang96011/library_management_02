@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: "books#index", as: :root
     resources :books
-    resources :users, except: [:edit, :update, :destroy]
-    resources :authors, except: :destroy
+    resources :users
+    resources :authors
   end
 
   root "static_pages#show", act: "home"
