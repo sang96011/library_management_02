@@ -24,4 +24,5 @@ Rails.application.routes.draw do
   resources :authors, only: [:show] do
     resources :follow_authors, only: [:create, :destroy]
   end
+  resources :categories, only: [:show]
 end
