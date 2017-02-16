@@ -1,4 +1,5 @@
 class Author < ApplicationRecord
+  mount_uploader :image, ImageUploader
   has_many :followed, as: :followed, class_name: Relationship.name
   has_many :follower, as: :follower, class_name: Relationship.name
   has_many :follower_users, through: :followed, source: :follower,
