@@ -1,5 +1,5 @@
 class Admin::AuthorsController < Admin::AdminController
-  before_action :find_author, only: [:show, :edit, :update]
+  before_action :find_author, except: [:new, :index, :create]
 
   def index
     @authors = if params[:value]
@@ -46,6 +46,15 @@ class Admin::AuthorsController < Admin::AdminController
       flash[:danger] = t "admin.author.update.danger"
       render :edit
     end
+  end
+
+  def destroy
+    if @author.destroy
+      flash[:success] = t "admin.author.destroy.success"
+    else
+      flash[:danger] = t "adnin.author.destroy.danger"
+    end
+    redirect_to :back
   end
 
   private
