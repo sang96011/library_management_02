@@ -66,7 +66,7 @@ en:
         danger: "Delete fail!"
     author:
       title: Authors
-      all: All authors
+      all: All author
       name: Name
       image: Image
       date_of_birth: Date of birth
