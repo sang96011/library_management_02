@@ -31,6 +31,10 @@
     <%= render "users_content" %>
   </tbody>
 </table>
-<div class="ltt-users-navbar pull-right">
+<div class="ltt-users-navbar pull-left">
   <%= render "navbar" %>
+</div>
+<div class="ltt-users-navbar pull-right">
+  <%= link_to t("admin.user.add_user"), new_admin_user_path,
+    id: "open-contacts-dialog-btn", class: "btn btn-primary inbox-sf-add-btn tip" %>
 </div>
