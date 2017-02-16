@@ -25,6 +25,10 @@
     <%= render @authors %>
   </tbody>
 </table>
-<div class="ltt-authors-navbar pull-right">
+<div class="ltt-authors-navbar pull-left">
   <%= render "navbar" %>
+</div>
+<div class="ltt-users-navbar pull-right">
+  <%= link_to t("admin.author.add_author"), new_admin_author_path,
+    id: "open-contacts-dialog-btn", class: "btn btn-primary inbox-sf-add-btn tip" %>
 </div>

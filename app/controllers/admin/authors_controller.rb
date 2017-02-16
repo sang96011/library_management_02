@@ -20,6 +20,21 @@ class Admin::AuthorsController < Admin::AdminController
       .paginate page: params[:page], per_page: Settings.static_pages.per_page
   end
 
+  def new
+    @author = Author.new
+  end
+
+  def create
+    @author = Author.new author_params
+    if @author.save
+      flash[:success] = t "admin.author.new.success"
+      redirect_to admin_authors_path
+    else
+      flash[:danger] = t "admin.author.new.danger"
+      render :new
+    end
+  end
+
   private
   def find_author
     @author = Author.find_by id: params[:id]
@@ -27,5 +42,9 @@ class Admin::AuthorsController < Admin::AdminController
       flash[:danger] = t "admin.book.error.not_found"
       redirect_to root_path
     end
+  end
+
+  def author_params
+    params.require(:author).permit :name, :image, :date_of_birth, :body
   end
 end
