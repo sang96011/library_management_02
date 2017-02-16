@@ -1,4 +1,18 @@
-<h1><%= t "admin.author.all" %></h1>
+<div class="ltt-authors-index-header">
+  <h1 class="col-md-2"><%= t "admin.author.all" %></h1>
+  <div class="row col-md-10">
+    <div class="col-md-6 ltt-authors-search">
+      <%= form_tag admin_authors_path, method: :get, remote: true do %>
+        <%= text_field_tag :value, "", placeholder: t("admin.search"),
+          class: "form-control authors-search-input", value: nil %>
+        <%= submit_tag t("admin.search"), class: "btn btn-primary" %>
+        <div class="clearfix"></div>
+      <% end %>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>
+<div class="row">
 <table class="table table-bordered table table-striped">
   <thead>
     <tr>
@@ -7,7 +21,7 @@
       <th class="col-md-1"><%= t "admin.author.date_of_birth" %></th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="ltt-authors-content">
     <%= render @authors %>
   </tbody>
 </table>
