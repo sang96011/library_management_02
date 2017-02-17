@@ -25,18 +25,30 @@ en:
       confirm: "You sure?"
     users: Users
     user:
+      error:
+        not_found: Author not found!
       all: All Users
       name: Name
       email: Email
       permission: Permission
       created_at: Create at
       updated_at: Update at
+      update:
+        namesite: Update user
+        success: "Update successful!"
+        danger: "Update fails, please try again!"
       namesite: Add new user
       save: Save
       add_user: Add user
       new:
         success: "Add user successful!"
         danger: "Add user fails, please try again!"
+      action:
+        title: "Action"
+        edit: "Edit"
+      destroy:
+        success: "Delete successful!"
+        danger: "Delete fail!"
     category: Categories
     publisher: Publishers
     request: Requests

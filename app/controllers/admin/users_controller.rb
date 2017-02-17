@@ -1,4 +1,6 @@
 class Admin::UsersController < Admin::AdminController
+  before_action :find_user, except: [:new, :index, :create]
+
   def index
     @users = if params[:value]
       User.search params
@@ -14,8 +16,6 @@ class Admin::UsersController < Admin::AdminController
   end
 
   def show
-    @users = User.find_by params[:id]
-    check_nil @users
   end
 
   def new
@@ -33,7 +33,37 @@ class Admin::UsersController < Admin::AdminController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @user.update_attributes user_params
+      flash[:success] = t "admin.user.update.success"
+      redirect_to admin_users_path
+    else
+      flash[:danger] = t "admin.user.update.danger"
+      render :edit
+    end
+  end
+
+  def destroy
+    if @user.destroy
+      flash[:success] = t "admin.user.destroy.success"
+    else
+      flash[:danger] = t "adnin.user.destroy.danger"
+    end
+    redirect_to :back
+  end
+
   private
+  def find_user
+    @user = User.find_by id: params[:id]
+    unless @user
+      flash[:danger] = t "admin.user.error.not_found"
+      redirect_to root_path
+    end
+  end
+
   def user_params
     params.require(:user).permit :name, :email, :password, :password_digest
   end
