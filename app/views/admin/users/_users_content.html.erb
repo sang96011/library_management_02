@@ -9,7 +9,7 @@
       <%= link_to t("admin.user.action.edit"), edit_admin_user_path(user),
         id: "open-contacts-dialog-btn", class: "btn btn-primary inbox-sf-add-btn tip"%>
       <%= link_to t("admin.user.action.delete"), admin_user_url(user),
-        id: "open-contacts-dialog-btn", class: "btn btn-primary inbox-sf-add-btn tip",
+        id: "open-contacts-dialog-btn", class: "btn btn-danger inbox-sf-add-btn tip",
         method: :delete, data: {confirm: t("admin.index.confirm")} %>
     </td>
   </tr>
