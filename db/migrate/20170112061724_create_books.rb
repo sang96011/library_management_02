@@ -8,7 +8,7 @@ class CreateBooks < ActiveRecord::Migration[5.0]
       t.integer :status
       t.float :rate_point
       t.integer :view_count
-      t.date :publish_date
+      t.datetime :publish_date
       t.integer :quantity
       t.integer :pages
       t.integer :publisher_id
