@@ -1,7 +1,5 @@
 <tr>
   <td class="col-md-2"><%= link_to book.title, admin_book_path(book), target: "_new" %></td>
-  <td class="col-md-2"><%= book.description %></td>
-  <td class="col-md-1"><%= image_tag book.image, class: "img-book" %></td>
   <td class="col-md-1"><%= book.price %></td>
   <td class="col-md-1"><%= book.status %></td>
   <td class="col-md-1"><%= book.rate_point %></td>
@@ -17,7 +15,7 @@
   <br>
   <br>
   <%= link_to t("admin.book.action.delete"), admin_book_url(book),
-    id: "open-contacts-dialog-btn", class: "btn btn-primary inbox-sf-add-btn tip",
+    id: "open-contacts-dialog-btn", class: "btn btn-danger inbox-sf-add-btn tip",
     method: :delete, data: {confirm: t("admin.index.confirm")} %>
   </td>
 </tr>
