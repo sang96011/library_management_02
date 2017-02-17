@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4">
+    <%= form_for [:admin, @category], method: :patch do |f| %>
+      <h3><%= t "categories.edit.name" %></h3>
+      <%= f.text_field :name, value: @category.name, class: "form-control" %>
+      <hr>
+      <%= f.submit class: "btn btn-success btn-block" %>
+    <% end %>
+  </div>
+</div>

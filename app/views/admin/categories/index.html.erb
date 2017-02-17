@@ -1,0 +1,17 @@
+<div class="row">
+  <%= link_to t("categories.index.add_category"),
+    new_admin_category_path, class: "btn btn-primary" %>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th><%= t "admin.categories.name" %></th>
+      <th><%= t "admin.categories.action" %></th>
+    </tr>
+    </thead>
+    <tbody>
+      <%= render @categories %>
+    </tbody>
+  </table>
+  <hr/>
+  <%= will_paginate @categories %>
+</div>

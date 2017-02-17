@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :users
     resources :authors
     resources :publishers
+    resources :categories
   end
 
   root "static_pages#show", act: "home"

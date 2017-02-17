@@ -129,3 +129,20 @@ en:
       destroy:
         success: "Delete successful!"
         danger: "Delete fail!"
+    categories:
+      index:
+        add_category: Add category
+        name: Name
+        action: Action
+        update: Update
+        delete: Delete
+      create:
+        success: Create success
+        error: Error
+      update:
+        success: Updated category
+        error: Can't update category
+      destroy:
+        success: Delete category successful
+      error:
+        not_found: Category not found!
