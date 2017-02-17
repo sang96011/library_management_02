@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20170214141030) do
   create_table "authors", force: :cascade do |t|
     t.string   "name"
     t.string   "image"
-    t.date     "date_of_birth"
+    t.datetime "date_of_birth"
     t.text     "body"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20170214141030) do
     t.integer  "status"
     t.float    "rate_point"
     t.integer  "view_count"
-    t.date     "publish_date"
+    t.datetime "publish_date"
     t.integer  "quantity"
     t.integer  "pages"
     t.integer  "publisher_id"
@@ -73,8 +73,8 @@ ActiveRecord::Schema.define(version: 20170214141030) do
   end
 
   create_table "order_items", force: :cascade do |t|
-    t.date     "due_date"
-    t.date     "returned_date"
+    t.datetime "due_date"
+    t.datetime "returned_date"
     t.integer  "quantity"
     t.integer  "price"
     t.integer  "user_id"

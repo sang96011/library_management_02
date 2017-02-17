@@ -3,7 +3,7 @@ User.create! name: "Le Tat Tung", email: "letattungtb@gmail.com",
 
 publisher = Publisher.create! name: "Le Tat Tung"
 publisher.books.create! title: "Harry potter", pages: 500, price: 20000,
-  quantity:10, publish_date: "1/1/2001"
+  quantity:10, publish_date: "2001-02-17"
 Category.create! name: "Literature book"
 Category.create! name: "Detective book"
 Category.create! name: "science book"
@@ -14,7 +14,7 @@ BookCategory.create! book_id: 1, category_id: 3
 10.times do
   name = Faker::Name.name
   date_of_birth = Faker::Date.between("1/1/1950", "31/12/1970")
-  Author.create! name: name, date_of_birth: date_of_birth
+  Author.create! name: name, date_of_birth: date_of_birth, body: "lorem is pull dea but"
 end
 
 10.times do
