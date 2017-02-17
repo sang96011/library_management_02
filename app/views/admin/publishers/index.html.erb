@@ -1,0 +1,33 @@
+<div class="ltt-publishers-index-header">
+  <h1 class="col-md-3"><%= t "admin.publisher.all" %></h1>
+  <div class="row col-md-9">
+    <div class="col-md-6 ltt-publishers-search">
+      <%= form_tag admin_publishers_path, method: :get, remote: true do %>
+        <%= text_field_tag :value, "", placeholder: t("admin.search"),
+          class: "form-control publishers-search-input", value: nil %>
+        <%= submit_tag t("admin.search"), class: "btn btn-primary" %>
+        <div class="clearfix"></div>
+      <% end %>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>
+<div class="row">
+<table class="table table-bordered table table-striped">
+  <thead>
+    <tr>
+      <th class="col-md-1"><%= t "admin.publisher.name" %></th>
+      <th class="col-md-1"><%= t "admin.publisher.action.title" %></th>
+    </tr>
+  </thead>
+  <tbody class="ltt-publishers-content">
+    <%= render @publishers %>
+  </tbody>
+</table>
+<div class="ltt-publishers-navbar pull-left">
+  <%= render "navbar" %>
+</div>
+<div class="ltt-users-navbar pull-right">
+  <%= link_to t("admin.publisher.add_publisher"), new_admin_publisher_path,
+    id: "open-contacts-dialog-btn", class: "btn btn-primary inbox-sf-add-btn tip" %>
+</div>

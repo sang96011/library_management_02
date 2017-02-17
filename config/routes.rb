@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :books
     resources :users
     resources :authors
+    resources :publishers
   end
 
   root "static_pages#show", act: "home"
